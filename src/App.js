@@ -10,7 +10,7 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header">🎭 syte</p>
+          <p className="header">🎭 syte - π</p>
           <p className="sub-text">
             crowd-sourced quote-wall ✨
           </p>
