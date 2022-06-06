@@ -37,12 +37,13 @@ const App = () => {
   };
 
   const renderWalletNotConnectedContainer = () => {
+    return(
     <button
       className='cta=button connect-wallet-button'
       onClick={connectWallet}
       >
         Connect to wallet
-      </button>
+      </button>)
   }
 
   useEffect(() => {
