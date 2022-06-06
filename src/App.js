@@ -13,7 +13,8 @@ const App = () => {
     'https://www.nitch.com/content/posts/1653856600-720w.jpg',
     'https://www.nitch.com/content/posts/1654027204-720w.jpg',
     'https://www.nitch.com/content/posts/1642643038-720w.jpg',
-    'https://www.nitch.com/content/posts/1638803040-720w.jpg'
+    'https://www.nitch.com/content/posts/1638803040-720w.jpg',
+    'https://giphy.com/clips/hamlet-jJjb9AUHOiP3nJJMdy'
   ];
   
   const isWalletConnected = async () => {
