@@ -18,6 +18,7 @@ const App = () => {
           console.log("Phantom wallet found");
           const response = await solana.connect({onlyIfTrusted:true});
           console.log('connected with public key: ', response.publicKey.toString());
+          setWalletAdd(response.publicKey.toString());
         }else{
           alert("Solana obj not found!")
         }
