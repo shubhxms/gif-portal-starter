@@ -9,6 +9,12 @@ const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 const App = () => {
 
   const [walletAdd, setWalletAdd] = useState(null);
+  const TEST_QUOTES = [
+    'https://www.nitch.com/content/posts/1653856600-720w.jpg',
+    'https://www.nitch.com/content/posts/1654027204-720w.jpg',
+    'https://www.nitch.com/content/posts/1642643038-720w.jpg',
+    'https://www.nitch.com/content/posts/1638803040-720w.jpg'
+  ];
   
   const isWalletConnected = async () => {
     try{
@@ -45,6 +51,18 @@ const App = () => {
       >
         Connect to wallet
       </button>)
+  };
+
+  const renderWalletConnectedContainer = async () => {
+    <div className='connected-container'>
+      <div className='gif-grid'>
+        {TEST_QUOTES.map(qt => (
+          <div className='git-item' key={qt}>
+            <img src={qt} alt={qt}/>
+          </div>
+        ))}
+      </div>
+    </div>
   }
 
   useEffect(() => {
@@ -64,7 +82,7 @@ const App = () => {
           <p className="sub-text">
             crowd-sourced quote-wall ✨
           </p>
-          {!walletAdd && renderWalletNotConnectedContainer()}
+          {walletAdd ? renderWalletConnectedContainer() : renderWalletNotConnectedContainer()}
         </div>
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
