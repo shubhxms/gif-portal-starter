@@ -63,7 +63,7 @@ const App = () => {
           <p className="sub-text">
             crowd-sourced quote-wall ✨
           </p>
-          {!walletAdd && renderWalletNotConnectedContainer}
+          {!walletAdd && renderWalletNotConnectedContainer()}
         </div>
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
