@@ -55,6 +55,7 @@ const App = () => {
   };
 
   const renderWalletConnectedContainer = () => {
+    return(
     <div className='connected-container'>
       <div className='gif-grid'>
         {TEST_QUOTES.map(qt => (
@@ -63,7 +64,7 @@ const App = () => {
           </div>
         ))}
       </div>
-    </div>
+    </div>)
   }
 
   useEffect(() => {
