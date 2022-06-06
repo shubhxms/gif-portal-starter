@@ -54,7 +54,6 @@ const App = () => {
   };
 
   const renderWalletConnectedContainer = async () => {
-    return(
     <div className='connected-container'>
       <div className='gif-grid'>
         {TEST_QUOTES.map(qt => (
@@ -63,7 +62,7 @@ const App = () => {
           </div>
         ))}
       </div>
-    </div>)
+    </div>
   }
 
   useEffect(() => {
@@ -83,7 +82,11 @@ const App = () => {
           <p className="sub-text">
             crowd-sourced quote-wall ✨
           </p>
-          {walletAdd ? renderWalletConnectedContainer() : renderWalletNotConnectedContainer()}
+          {
+            walletAdd ?
+            renderWalletConnectedContainer() :
+            renderWalletNotConnectedContainer()
+          }
         </div>
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
