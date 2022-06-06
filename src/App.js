@@ -53,7 +53,7 @@ const App = () => {
       </button>)
   };
 
-  const renderWalletConnectedContainer = async () => {
+  const renderWalletConnectedContainer = () => {
     <div className='connected-container'>
       <div className='gif-grid'>
         {TEST_QUOTES.map(qt => (
