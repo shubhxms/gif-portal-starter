@@ -59,7 +59,7 @@ const App = () => {
     <div className='connected-container'>
       <div className='gif-grid'>
         {TEST_QUOTES.map(qt => (
-          <div className='git-item' key={qt}>
+          <div className='gif-item' key={qt}>
             <img src={qt} alt={qt}/>
           </div>
         ))}
