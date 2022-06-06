@@ -9,6 +9,8 @@ const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 const App = () => {
 
   const [walletAdd, setWalletAdd] = useState(null);
+  const [inputVal, setInputVal] = useState('');
+  const [imgList, setImgList] = useState([]);
   const TEST_QUOTES = [
     'https://www.nitch.com/content/posts/1653856600-720w.jpg',
     'https://www.nitch.com/content/posts/1654027204-720w.jpg',
@@ -44,28 +46,45 @@ const App = () => {
     }
   };
 
-  const renderWalletNotConnectedContainer = () => {
-    return(
+  const sendImg = async () => {
+    if (inputVal.length > 0){
+      console.log("link: ", inputVal);
+      setImgList([...imgList, inputVal]);
+      setInputVal('');
+    }else{
+      console.log("empty input. try again!");
+    }
+  }
+
+  const renderWalletNotConnectedContainer = () => (
     <button
       className='cta=button connect-wallet-button'
       onClick={connectWallet}
       >
         Connect to wallet
-      </button>)
-  };
+      </button>
+  );
 
-  const renderWalletConnectedContainer = () => {
-    return(
+  const renderWalletConnectedContainer = () => (
     <div className='connected-container'>
+      <form
+        onSubmit={(evt) => {
+          evt.preventDefault();
+          sendImg();
+        }}
+      >
+        <input type="text" placeholder='enter link to image' onChange={(e) => {setInputVal(e.target.value)}}/>
+        <button type='submit' className='cta-button submit-gif-button'>Submit</button>
+      </form>
       <div className='gif-grid'>
-        {TEST_QUOTES.map(qt => (
+        {imgList.map(qt => (
           <div className='gif-item' key={qt}>
             <img src={qt} alt={qt}/>
           </div>
         ))}
       </div>
-    </div>)
-  }
+    </div>
+  );
 
   useEffect(() => {
     const onLoad = async () => {
@@ -74,6 +93,15 @@ const App = () => {
     window.addEventListener('load', onLoad);
     return () => window.removeEventListener('load', onLoad);
   }, []);
+
+  useEffect(() => {
+    if(walletAdd){
+      console.log("fetching data");
+    }
+    // call solana program
+    //set state
+    setImgList(TEST_QUOTES);
+  }, [walletAdd])
 
 
   return (
