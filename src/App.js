@@ -84,9 +84,10 @@ const App = () => {
             crowd-sourced quote-wall ✨
           </p>
           {
-            walletAdd ?
-            renderWalletConnectedContainer() :
-            renderWalletNotConnectedContainer()
+            !walletAdd && renderWalletNotConnectedContainer()
+          }
+          {
+            walletAdd && renderWalletConnectedContainer()
           }
         </div>
         <div className="footer-container">
