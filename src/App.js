@@ -116,18 +116,14 @@ const App = () => {
     }
   };
 
-  useEffect(() => {
-    const onLoad = async () => {
-      await isWalletConnected();
-    };
-    window.addEventListener('load', onLoad);
-    return () => window.removeEventListener('load', onLoad);
-  }, []);
-
   const createImgAccount = async () => {
     try{
       const provider = getProvider();
       const program = new Program(idl, programId, provider);
+      console.log("idl", idl);
+      console.log("program id", programId);
+      console.log("provider", provider);
+      console.log("program", program)
       console.log("ping");
       await program.rpc.startStuffOff({
         account:{
@@ -148,6 +144,11 @@ const App = () => {
     try{
       const provider = getProvider();
       const program = new Program(idl, programId, provider);
+      console.log("idl", idl);
+      console.log("program id", programId);
+      console.log("provider", provider);
+      console.log("program", program)
+      console.log("program.account", program.account)
       console.log(program.account.baseAccount)
 
       const account = await program.account.baseAccount.fetch(baseAccount.publicKey);
@@ -158,6 +159,14 @@ const App = () => {
       setImgList(null)
     }
   }
+  
+  useEffect(() => {
+    const onLoad = async () => {
+      await isWalletConnected();
+    };
+    window.addEventListener('load', onLoad);
+    return () => window.removeEventListener('load', onLoad);
+  }, []);
 
   useEffect(() => {
     if(walletAdd){

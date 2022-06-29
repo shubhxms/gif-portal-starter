@@ -1,14 +1,14 @@
 {
-    "version": "0.1.0",
-    "name": "myepicproject",
-    "instructions": [
-      {
-        "name": "startStuffOff",
-        "accounts": [],
-        "args": []
-      }
-    ],
-    "metadata": {
-      "address": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+  "version": "0.1.0",
+  "name": "myepicproject",
+  "instructions": [
+    {
+      "name": "startStuffOff",
+      "accounts": [],
+      "args": []
     }
+  ],
+  "metadata": {
+    "address": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
   }
+}
