@@ -29,13 +29,6 @@ const App = () => {
   const [walletAdd, setWalletAdd] = useState(null);
   const [inputVal, setInputVal] = useState('');
   const [imgList, setImgList] = useState(null);
-  const TEST_QUOTES = [
-    'https://www.nitch.com/content/posts/1653856600-720w.jpg',
-    'https://www.nitch.com/content/posts/1654027204-720w.jpg',
-    'https://www.nitch.com/content/posts/1642643038-720w.jpg',
-    'https://www.nitch.cocomm/content/posts/1638803040-720w.jpg',
-    'https://giphy.com/clips/hamlet-jJjb9AUHOiP3nJJMdy'
-  ];
   
   const isWalletConnected = async () => {
     try{
@@ -103,7 +96,7 @@ const App = () => {
       className='cta=button connect-wallet-button'
       onClick={connectWallet}
       >
-        Connect to wallet
+        Connect to dapp with your wallet
       </button>
   );
 
@@ -200,7 +193,7 @@ const App = () => {
         <div className="header-container">
           <p className="header">🎭 syte - π</p>
           <p className="sub-text">
-            crowd-sourced quote-wall ✨
+            crowd-sourced aesthetic & quote-wall ✨
           </p>
           {
             !walletAdd && renderWalletNotConnectedContainer()
