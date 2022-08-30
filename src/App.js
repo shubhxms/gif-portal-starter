@@ -132,6 +132,7 @@ const App = () => {
         {imgList.map((qt, ind) => (
           <div className='gif-item' key={ind}>
             <img src={qt.qt} alt={qt}/>
+            <p>vibed with {qt.userAddress.toString()}</p>
           </div>
         ))}
       </div>
